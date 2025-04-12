@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Resume</title>
+        <!--Filename: resume.html-->
+        <style>
+            body {
+                display: flex;
+                background-color: #333333;
+                padding: 0;
+                margin: 0;
+                flex-direction: column;
+            }
+
+            /* Logo styling */
+            .logo-name {
+                display: flex;
+                align-items: left;
+                gap: 10px;
+                font-size: 24px;
+                font-style: italic;
+                color: #EBF3E8;
+                letter-spacing: 5px;
+            }
+
+            .logo-name span {
+                color: blue;
+            }
+
+            /* Navbar structure */
+            .navbar {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 0 20px 10px;
+                margin: 0 20px 0 20px; 
+            }
+
+            /* Navigation links */
+            nav {
+                gap: 20px;
+                display: flex;
+                justify-content: flex-end; /* This aligns the links to the right */
+            }
+
+            nav a {
+                text-decoration: none;
+                font-size: 14px;
+                color: ghostwhite;
+                margin: 0 15px;
+            }
+
+            nav a:hover {
+                text-decoration: underline;
+                color: #FFDB58;
+            }
+
+            /* Main content */
+            main {
+                display: flex;
+                justify-content: center; /* Center content horizontally */
+                align-items: center; /* Center content vertically */
+            }
+
+            /* Box styling */
+            .box {
+                display: flex;
+                flex-direction: column; /* Stack the image and text vertically */
+                width: 85%;
+                height: 350px;
+                padding: 25px;
+                border: 2px solid white;
+                margin: 20px 20px 0 20px;
+                justify-content: flex-start; /* Align at the top of the box */
+                align-items: center; /* Center horizontally */
+                text-align: center;
+                color: black;
+                background-color: #EBF3E8;
+                box-shadow: 0 8px 15px rgba(0, 0, 0, 0.5);
+            }
+
+            /* Profile image */
+            .box img {
+                width: 100px; 
+                height: 100px; 
+                border-radius: 50%; /* Create a circle */
+                object-fit: cover; /* Ensures the image maintains its aspect ratio within the circle */
+            }
+
+            .name {
+                margin-top: 40px; /* Adds space between the image and the name */
+                font-size: 28px; 
+                font-weight: bold;
+            }
+
+            .objective {
+                margin: 10px 5% 10px 5%;
+                text-align: center;
+                font-size: 16px;
+                font-family: Arial, sans-serif;
+                letter-spacing: 1px;
+            }
+
+            /* Horizontal line */
+            hr {
+                border: 1px solid #333;
+                width: 90%;
+                margin: 25px auto;
+            }
+
+            /* Contact info styling */
+            .contact-info {
+                display: flex;
+                justify-content: space-between; /* Distributes elements (left, center, right) */
+                align-items: center;
+                width: 80%; 
+                padding: 10px 20px;
+                height: 100px;
+            }
+
+            .contact-item {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+            }
+
+            .contact-info img {
+                width: 30px;
+                height: 30px;
+            }
+
+            .trans {
+                background-color: rgba(0, 0, 0, 0.3);
+                width: 89%;
+                margin: 0 auto;
+            }
+
+            /* Work experience section */
+            .work-experience {
+                font-family: Arial, sans-serif;
+                color: #C0C0C0;
+                margin-left: 150px;
+            }
+
+            .work-experience h2 {
+                font-size: 20px;
+                font-weight: bold;
+                margin-bottom: 10px;
+            }
+
+            .job-entry {
+                display: flex;
+                gap: 20px;
+                margin-bottom: 15px;
+                margin-left: 50px;
+            }
+
+            .job-date {
+                font-size: 14px;
+                color: #696969;
+                width: 100px;
+            }
+
+            .job-details {
+                flex-grow: 1; /* Expands to fill remaining space */
+            }
+
+            .job-title {
+                font-size: 18px;
+                font-weight: bold;
+            }
+
+            .company {
+                font-weight: bold;
+                padding-top: 8px;
+            }
+
+            .job-description {
+                font-size: 14px;
+                margin-top: 5px;
+            }
+
+            .job-description ul {
+                padding-left: 20px;
+            }
+
+            .job-description li {
+                margin-bottom: 5px;
+            }
+
+            /* Education background section */
+            .edu-background {
+                font-family: Arial, sans-serif;
+                color: #C0C0C0;
+                margin-left: 150px;
+                display: flex;
+                justify-content: space-between;
+                gap: 50px;
+            }
+
+            .edu-background h1 {
+                font-size: 20px;
+                font-weight: bold;
+            }
+
+            .edu-container {
+                display: flex;
+                align-items: center;
+                justify-content: flex-start;
+                position: relative;
+                width: 100%;
+                right: 10%;
+                gap: 30px;
+                margin-top: 70px;
+                padding-bottom: 40px;
+            }
+
+            .logo {
+                width: 40px;
+                border-radius: 50%;
+                margin-left: 10px;
+                margin-top: 5px;
+            }
+
+            .edu-info {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                width: 35%;
+            }
+
+            .edu-info p {
+                margin: 5px 0;
+            }
+
+            .degree {
+                font-style: italic;
+                font-weight: bold;
+                margin-top: 5px;
+            }
+
+            .gpa {
+                margin-top: 5px;
+                font-weight: bold;
+            }
+
+            /* Skills box styling */
+            .box-skills {
+                display: flex;
+                width: 85%;
+                height: 240px;
+                padding: 25px;
+                border: 2px solid white;
+                margin: 0 auto;
+                align-items: left; 
+                text-align: left;
+                color: black;
+                background-color: #EBF3E8;
+                box-shadow: 0 8px 15px rgba(0, 0, 0, 0.5);
+            }
+
+            .skills {
+                margin-left: 125px;
+                font-size: 28px;
+                font-weight: bold;
+            }
+
+            .list-of-skills {
+                display: flex;
+                position: relative;
+                top: 50px;
+                right: 70px;
+            }
+
+             /* Footer */
+            footer {
+                background-color: rgba(0, 0, 0, 0.2);
+                text-align: center;
+                color: lightsteelblue;
+                padding: 15px;
+                margin-top: 20px;
+            }
+
+            /* Responsive Design */
+            /* Adjustments for smaller screens */
+            @media (max-width: 768px) {
+                .navbar {
+                    flex-direction: column; /* Stack navbar items vertically on small screens */
+                    align-items: center;
+                }
+
+                nav {
+                    flex-direction: column; /* Stack links vertically on smaller screens */
+                    gap: 10px;
+                    text-align: center;
+                }
+
+                .box {
+                    width: 95%; /* Adjust the box width for smaller screens */
+                    height: auto; /* Allow box height to adjust */
+                }
+
+                .contact-info {
+                    flex-direction: column; /* Stack contact items vertically */
+                    align-items: center;
+                }
+
+                .work-experience, .edu-background {
+                    margin: 0 auto; /* Center horizontally */
+                    width: 90%;     /* Responsive width */
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: left;
+                    align-items: left;
+                }
+
+                .edu-container {
+                    flex-direction: column; /* Stack education information vertically */
+                    align-items: center;
+                    right: 0;
+                }
+
+                .box-skills {
+                    width: 85%; /* Make skills box responsive */
+                    margin: 0 auto;
+                    flex-direction: column;
+                }
+
+                .skills {
+                    margin-left: 0; /* Adjust skill title margin for smaller screens */
+                    padding: 0;
+                    font-size: 24px;
+                }
+
+                .list-of-skills {
+                    flex-direction: column; /* Stack skills vertically */
+                    top: 0;
+                    right: 0;
+                }
+            }
+
+        </style>
+    </head>
+    <body>
+        <header>
+            <div class="navbar">
+                <h3 class="logo-name"><span>&lt;/&gt;</span>Developer</h3>
+                <nav>
+                    <a href="index.html">Home</a>
+                    <a href="projects.html">Project</a>
+                    <a href="resume.html">Resume</a>
+                    <a href="aboutme.html">About me</a>
+                    <a href="contactme.html">Contact</a>
+                </nav>
+            </div>
+        </header>
+
+        <main>
+            <div class="box">
+                <img src="photo.jpg" alt="Profile Image">
+                <h1 class="name">RUTH CERILO </h1>
+                <p class="objective">Detail-oriented Web Developer with expertise in front-end and 
+                back-end technologies, seeking to create dynamic and user-friendly web applications. 
+                Proficient in HTML, CSS, JavaScript, and modern frameworks, committed to delivering 
+                innovative solutions and staying ahead of emerging technologies to enhance user experiences 
+                and drive business success.</p>
+
+                <!-- This <hr> tag creates a horizontal line on the page -->
+                <hr>
+                <div class="contact-info">
+                    <!-- Left: Email -->
+                    <div class="contact-item">
+                        <img src="email.png" alt="Email Icon">
+                        <span>rcerilo.833@gmail.com</span>
+                    </div>
+                
+                    <!-- Center: Mobile -->
+                    <div class="contact-item">
+                        <img src="phone.png" alt="Phone Icon">
+                        <span>+63 128544006</span>
+                    </div>
+                
+                    <!-- Right: Location -->
+                    <div class="contact-item">
+                        <img src="location.png" alt="Location Icon">
+                        <span>Metro, Manila</span>
+                    </div>
+                </div>   
+            </div>
+        </main>
+
+        <section class="trans">
+            <!--Work Ecperience section-->
+            <section class="work-experience">
+                <h1>WORK EXPERIENCE</h1>
+    
+                <section class="job-entry">
+                    <div class="job-date">2020 - 2024 </div>
+                    <div class="job-details">
+                        <div class="job-title">Web Developer </div>
+                        <div class="company">Amazon.com Inc. Philippines</div>
+                        <div class="job-description">
+                            <ul>
+                                <li>Digital retouching and editing of photos.</li>
+                                <li>Designed layouts and structures of larger websites.</li>
+                                <li>Led a team of 10 people.</li>
+                                <li>Kept up-to-date with cutting-edge technology.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+    
+                <section class="job-entry">
+                    <div class="job-date">2017 - 2020 </div>
+                    <div class="job-details">
+                        <div class="job-title">Junior Web Developer </div>
+                        <div class="company">Amazon.com Inc. Philippines</div>
+                        <div class="job-description">
+                            <ul>
+                                <li>Produced sample websites.</li>
+                                <li>Designed user-friendly websites on different devices.</li>
+                                <li>Received feedback and inquiries from clients and polished the websites according to their needs.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+            </section>
+    
+            <!--Educational Background Section-->
+            <section class="edu-background">
+                <h1>EDUCATION</h1>
+                <div class="edu-container">
+                    <img src="education.jpg" class="logo"> 
+                    <div class="edu-info">
+                    <p>07/2015 - 07/2018</p>
+                    <p>Adamson University, Manila</p>
+                    <p class="degree">BS in Information Technology</p>
+                    <p class="gpa">GWA 1.25</p>
+                    </div>
+                <div class="edu-info">
+                    <p>07/2020 - 07/2022</p>
+                    <p>Adamson University, Manila</p>
+                    <p class="degree">Master in Information Technology</p>
+                    <p class="gpa">GWA 1.20</p>
+                    </div>
+                </div>
+            </section>
+        </section>
+
+        <!--Skills-->
+        <div class="box-skills">
+            <h1 class="skills">SKILLS </h1>
+            <div class="list-of-skills">
+                <ul>
+                    <li>HTML</li>
+                    <li>CSS</li>
+                    <li>JavaScript</li>
+                    <li>SQL</li>
+                    <li>SEO</li>
+                    <li>Analytical skills</li>
+                    <li>Capable of designing and creating website layouts.</li>
+                    <li>Able to deliver user-friendly websites based on current trend analysis.</li>
+                    <li>Excellent technical skills and communication skills to collaborate with different corporations.</li>
+                </ul>
+            </div>
+        </div>
+
+        <footer>I hereby certify that the above information is true and correct to the best of my 
+            knowledge and understanding.</footer>
+    </body>
+</html>

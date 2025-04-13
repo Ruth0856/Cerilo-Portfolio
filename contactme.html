@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Contact Me</title>
+        <!--Filename: contactme.html-->
+        <style>
+            /* General Body style */
+            body {
+                background-color: #1e1e1e;
+                color: #fff;
+                font-family: Arial, sans-serif;
+                padding: 0;
+                margin: 0;
+            }
+
+            /* Logo styling */
+            .logo-name {
+                display: flex;
+                align-items: left;
+                gap: 10px;
+                font-size: 24px;
+                font-style: italic;
+                color: #EBF3E8;
+                letter-spacing: 5px;
+            }
+
+            .logo-name span {
+                color: blue;
+            }
+
+            /* Navigation bar styling */
+            .navbar {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 0 20px 10px;
+                margin: 0 20px 0 20px; 
+            }
+
+            /* Navigation links */
+            nav {
+                gap: 20px;
+                display: flex;
+                justify-content: flex-end; /* This aligns the links to the right */
+            }
+
+            nav a {
+                text-decoration: none;
+                font-size: 14px;
+                color: ghostwhite;
+                margin: 0 15px;
+            }
+
+            nav a:hover {
+                text-decoration: underline;
+                color: #FFDB58;
+            }
+
+            /* Contact section layout */
+            .contact-section {
+                max-width: 1000px;
+                margin: 50px auto;
+                padding: 20px;
+                text-align: center;
+            }
+
+            .contact-section h1 {
+                margin-bottom: 15px;
+                font-size: 2rem;
+                letter-spacing: 1px;
+                font-weight: bold;
+            }
+
+            .contact-section p {
+                font-size: 14px;
+                color: #ccc;
+                letter-spacing: 1px;
+                margin-bottom: 25px;
+            }
+
+            /* Flex Container for Form and Info */
+            .contact-container {
+                display: flex;
+                justify-content: space-between;
+                flex-wrap: wrap;
+                margin-top: 40px;
+            }
+
+            /* Contact form styling */
+            .contact-form {
+                flex: 1;
+                min-width: 45%;
+                display: flex;
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .contact-form input,
+            .contact-form textarea {
+                padding: 12px;
+                background-color: #333;
+                border: none;
+                color: #fff;
+                border-radius: 5px;
+            }
+
+            .contact-form button {
+                background-color: #111;
+                color: #fff;
+                padding: 12px;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+                letter-spacing: 2px;
+            }
+
+            /* Contact information section */ 
+            .container-info {
+                display: flex;
+                min-width: 30%;
+                margin-left: 85px;
+                color: #fff;
+                padding: 20px;
+                border-radius: 10px;
+                text-align: justify;
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+                justify-content: center;
+            }
+
+            .container-info hr {
+                width: 100%;
+                margin-left: 0;
+                border: 1px solid #ccc;
+            }
+
+            .info-item {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                font-size: 16px;
+                line-height: 1.5;
+            }
+
+            /* Icons styling */
+            .info-item i {
+                border-right: 2px solid #888;
+                font-size: 20px;
+                color: #ccc;
+            }
+
+            .info-icon {
+                width: 25px;
+                height: 25px;
+            }
+
+            /* Social Media icons */
+            .social-icons {
+                display: flex;
+                gap: 20px;
+            }
+
+            .icon {
+                display: grid;
+                grid-template-columns: 3fr 1fr;
+                width: 30px;
+                height: 30px;
+            }
+
+            /* Responsive Design */
+            @media (max-width: 768px) {
+                .navbar {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                }
+
+                nav {
+                    font-size: 12px;
+                    gap: 10px;
+                    margin-top: 10px;
+                    text-align: center;
+                }
+
+                .contact-section  hr {
+                    width: 70%;
+                }
+
+                .contact-container {
+                    flex-direction: column;
+                    align-items: center;
+                }
+
+                .contact-form, 
+                .container-info {
+                    min-width: 50%;
+                    width: 50%;
+                    margin: 0;
+                    padding: 20px;
+                }
+
+                .contact-form input,
+                .contact-form textarea,
+                .contact-form button {
+                    font-size: 14px;
+                    width: 100%;
+                }
+
+                .info-item {
+                    font-size: 14px;
+                    flex-direction: row;
+                    align-items: flex-start;
+                    gap: 10px;
+                }
+
+                .info-icon {
+                    width: 20px;
+                    height: 20px;
+                }
+
+                .social-icons {
+                    justify-content: left;
+                    flex-wrap: wrap;
+                }
+
+                .icon {
+                    width: 25px;
+                    height: 25px;
+                }
+
+                .container-info hr {
+                    width: 100%;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <!--Header with Navigation-->
+        <header>
+            <div class="navbar">
+                <h3 class="logo-name"><span>&lt;/&gt;</span>Developer</h3>
+                <nav>
+                    <a href="index.html">Home</a>
+                    <a href="projects.html">Project</a>
+                    <a href="resume.html">Resume</a>
+                    <a href="aboutme.html">About me</a>
+                    <a href="contactme.html">Contact</a>
+                </nav>
+            </div>
+        </header>
+
+        <!--Contact section-->
+        <div class="contact-section">
+            <h1>Contact Me</h1>
+            <p>I'll be glad to answer your questions!</p>
+            <hr>
+            <div class="contact-container">
+                <!--Contact form-->
+                <form class="contact-form" action="https://formspree.io/f/xrbpjlnp" method="POST"> 
+                    <input type="text" name="name" placeholder="Name" required>
+                    <input type="email" name="email" placeholder="E-mail" required>
+                    <input type="text" name="website" placeholder="Website URL">
+                    <textarea name="message" placeholder="Your Message" rows="4" required></textarea>
+                    <button type="submit">SEND</button>
+                </form>
+
+                <!---Contact info and Socials-->
+                <div class="container-info">
+                    <div class="info-item"><img src="gps.png" class="info-icon" alt="Location">
+                        <i class="fas fa-map-marker-alt"></i> Metro, Manila<br>Philippines</div>
+                    <div class="info-item"><img src="phonecall.png" class="info-icon" alt="Phone">
+                        <i class="fas fa-phone"></i> +63 912 854 4006</div>
+                    <div class="info-item"><img src="envelope.png"  class="info-icon" alt="E-mail">
+                        <i class="fas fa-envelope"></i> c08.developer@gmail.com</div>
+                    <hr>
+                    <div class="social-icons">
+                        <a href="https://www.linkedin.com/in/ruth-cerilo-bb944035b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app">
+                            <img src="social.png" class="icon" alt="LinkedIn"></a>
+                        <a href="https://twitter.com/">
+                            <img src="socialX.png" class="icon" alt="Twitter"></a>
+                        <a href="https://teams.live.com/l/skype/invite/vbNd3PvdQtqp">
+                            <img src="socialS.png" class="icon" alt="Skype"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

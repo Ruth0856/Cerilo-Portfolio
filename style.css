@@ -31,6 +31,7 @@ body {
     padding: 20px 50px;
     flex-wrap: wrap;
     width: 100%;
+    overflow: hidden;
 }
 
 /* Logo styling */
@@ -51,17 +52,19 @@ body {
 .nav-icons-group {
     display: flex;
     align-items: center;
-    justify-content: right;
-    gap: 25px;
-    width: 100%;
-    flex-wrap: wrap;
+    gap: 30px;
+    max-width: 100%;
+    flex-wrap: nowrap;
+    overflow: hidden;
+    margin-left: auto;
 }
 
 /* Navigation styling */
 nav {
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    gap: 25px;
+    flex-wrap: nowrap;
 }
 
 /* Navigation links styling */
@@ -161,6 +164,7 @@ nav a:hover {
 .social-icons {
     display: flex;
     gap: 20px;
+    flex-shrink: 0;
 }
 
 /* Social icon styling */
@@ -212,11 +216,10 @@ footer {
 
     .nav-icons-group {
         flex-direction: column;
-        justify-content: right;
         align-items: center;
-        gap: 10px;
-        width: 100%;
-        margin: 0 auto;
+        gap: 15pxx;
+        margin-left: 0;
+        margin-top: 10px;
     }
 
     .logo-name {
@@ -227,12 +230,8 @@ footer {
     }
 
     nav {
-        display: flex;
         flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        margin-top: 10px;
-        width: 100%;
+        gap: 10px;
     }
 
     nav a {
@@ -288,10 +287,7 @@ footer {
     }
 
     .social-icons {
-        display: flex;
         justify-content: center;
-        gap: 10px;
-        margin-top: 10px;
     }
     
     /* Adjust social icon size */
